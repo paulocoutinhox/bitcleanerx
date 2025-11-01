@@ -58,11 +58,11 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.config.name }}-artifact
-          path: build/compose/binaries/main/*/*.${{ matrix.config.extension }}
+          path: composeApp/build/compose/binaries/main/*/*.${{ matrix.config.extension }}
 
       - name: Release
         id: upload-release-asset
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: build/compose/binaries/main/*/*.${{ matrix.config.extension }}
+          files: composeApp/build/compose/binaries/main/*/*.${{ matrix.config.extension }}

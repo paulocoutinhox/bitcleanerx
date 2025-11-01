@@ -3,10 +3,10 @@ androidx-lifecycle = "2.9.5"
 composeHotReload = "1.0.0-rc02"
 composeMultiplatform = "1.9.2"
 junit = "4.13.2"
-kotlin = "2.2.20"
+kotlin = "2.2.21"
 kotlinx-coroutines = "1.10.2"
-kaml = "0.61.0"
-kotlinx-serialization = "1.7.3"
+kaml = "0.102.0"
+kotlinx-serialization = "1.9.0"
 coil = "3.3.0"
 
 [libraries]
