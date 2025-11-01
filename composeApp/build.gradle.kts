@@ -13,7 +13,7 @@ plugins {
 
 kotlin {
     jvm()
-    
+
     sourceSets {
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -51,17 +51,17 @@ compose.desktop {
             appResourcesRootDir.set(project.layout.projectDirectory.dir("resources"))
             copyright = "2025 Paulo Coutinho. All rights reserved."
             vendor = "Paulo Coutinho"
-            licenseFile.set(project.file("LICENSE.txt"))
+            licenseFile.set(project.file("../LICENSE.txt"))
             modules(
                 "jdk.unsupported"
             )
-            
+
             windows {
                 dirChooser = true
                 menuGroup = "BitCleanerX"
                 iconFile.set(project.file("src/jvmMain/resources/icons/app.ico"))
             }
-            
+
             macOS {
                 iconFile.set(project.file("src/jvmMain/resources/icons/app.icns"))
                 bundleID = "com.bitcleanerx.app"
@@ -79,7 +79,7 @@ compose.desktop {
                     password.set(providers.environmentVariable("NOTARIZATION_PASSWORD"))
                 }
             }
-            
+
             linux {
                 iconFile.set(project.file("src/jvmMain/resources/icons/app.png"))
             }
