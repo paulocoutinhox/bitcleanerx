@@ -43,7 +43,7 @@ jobs:
       - name: Build
         env:
           SIGNING_IDENTITY: ${{ secrets.SIGNING_IDENTITY }}
-        run: ./gradlew clean package
+        run: ./gradlew clean packageDistributionForCurrentOS
 
       - name: Notarize
         if: runner.os == 'macOS'
