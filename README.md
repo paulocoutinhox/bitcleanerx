@@ -94,11 +94,11 @@ For **macOS** distribution with code signing and notarization, you need to set t
 
 ### Plugins Versions
 
-- `org.jetbrains.kotlin.multiplatform` (2.2.20): [Gradle Plugin Portal](https://plugins.gradle.org/plugin/org.jetbrains.kotlin.multiplatform)
-- `org.jetbrains.compose` (1.9.1): [Gradle Plugin Portal](https://plugins.gradle.org/plugin/org.jetbrains.compose)
-- `org.jetbrains.kotlin.plugin.compose` (2.2.20): [Gradle Plugin Portal](https://plugins.gradle.org/plugin/org.jetbrains.kotlin.plugin.compose)
-- `org.jetbrains.compose.hot-reload` (1.0.0-rc02): [Gradle Plugin Portal](https://plugins.gradle.org/plugin/org.jetbrains.compose.hot-reload)
-- `org.jetbrains.kotlin.plugin.serialization` (2.2.20): [Gradle Plugin Portal](https://plugins.gradle.org/plugin/org.jetbrains.kotlin.plugin.serialization)
+- `org.jetbrains.kotlin.multiplatform`: [Gradle Plugin Portal](https://plugins.gradle.org/plugin/org.jetbrains.kotlin.multiplatform)
+- `org.jetbrains.compose`: [Gradle Plugin Portal](https://plugins.gradle.org/plugin/org.jetbrains.compose)
+- `org.jetbrains.kotlin.plugin.compose`: [Gradle Plugin Portal](https://plugins.gradle.org/plugin/org.jetbrains.kotlin.plugin.compose)
+- `org.jetbrains.compose.hot-reload`: [Gradle Plugin Portal](https://plugins.gradle.org/plugin/org.jetbrains.compose.hot-reload)
+- `org.jetbrains.kotlin.plugin.serialization`: [Gradle Plugin Portal](https://plugins.gradle.org/plugin/org.jetbrains.kotlin.plugin.serialization)
 
 ## Screenshots
 
