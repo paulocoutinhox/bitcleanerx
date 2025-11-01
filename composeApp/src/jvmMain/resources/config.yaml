@@ -1,0 +1,79 @@
+macosList:
+  - groupName: Xcode Junk
+    groupImage: xcode
+    items:
+      - name: Archives
+        type: folder
+        path: ~/Library/Developer/Xcode/Archives
+      - name: Derived Data
+        type: folder
+        path: ~/Library/Developer/Xcode/DerivedData
+      - name: iOS Device Support
+        type: folders
+        path: ~/Library/Developer/Xcode/iOS DeviceSupport
+      - name: Core Simulator Caches
+        type: folder
+        path: ~/Library/Developer/CoreSimulator/Caches
+      - name: Xcode Playground's Project Cache
+        type: folder
+        path: ~/Library/Developer/XCPGDevices
+      - name: Xcode Previews
+        type: folder
+        path: ~/Library/Developer/Xcode/UserData/Previews
+
+  - groupName: Device Simulators
+    groupImage: simulator
+    items:
+      - name: Simulator Devices
+        type: folders
+        path: ~/Library/Developer/CoreSimulator/Devices
+
+  - groupName: Device Simulator Runtimes
+    groupImage: runtime
+    items:
+      - name: Simulator Runtimes
+        type: folders
+        path: ~/Library/Developer/CoreSimulator/Runtimes
+
+  - groupName: Android Studio
+    groupImage: android
+    items:
+      - name: Gradle Caches
+        type: folder
+        path: ~/.gradle/caches
+      - name: Android Build Cache
+        type: folder
+        path: ~/.android/build-cache
+
+  - groupName: Homebrew
+    groupImage: homebrew
+    items:
+      - name: Homebrew Cache
+        type: folder
+        path: ~/Library/Caches/Homebrew
+      - name: Homebrew Downloads
+        type: folder
+        path: ~/Library/Caches/Homebrew/downloads
+
+windowsList:
+  - groupName: Visual Studio
+    groupImage: visualstudio
+    items:
+      - name: VS Cache
+        type: folder
+        path: ~\AppData\Local\Microsoft\VisualStudio\ComponentModelCache
+      - name: VS Temp
+        type: folder
+        path: ~\AppData\Local\Temp\VisualStudioEditing
+
+linuxList:
+  - groupName: Package Manager
+    groupImage: system
+    items:
+      - name: APT Cache
+        type: folder
+        path: /var/cache/apt/archives
+
+iosList: [ ]
+
+androidList: [ ]
