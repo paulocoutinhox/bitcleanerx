@@ -15,7 +15,12 @@ import java.io.File
 sealed class CustomScanState {
     object Idle : CustomScanState()
     data class Scanning(val currentPath: String) : CustomScanState()
-    data class Completed(val rootNode: FileTreeNode) : CustomScanState()
+    data class Completed(val rootNode: FileTreeNode, val version: Long = 0) : CustomScanState()
+}
+
+enum class SortMode {
+    NAME,
+    SIZE
 }
 
 data class PieChartData(
@@ -43,7 +48,11 @@ class CustomCleanerViewModel(
     private val _expandedNodes = MutableStateFlow<Set<String>>(emptySet())
     val expandedNodes: StateFlow<Set<String>> = _expandedNodes
 
+    private val _sortMode = MutableStateFlow(SortMode.NAME)
+    val sortMode: StateFlow<SortMode> = _sortMode
+
     private var scanJob: Job? = null
+    private var stateVersion = 0L
 
     fun setSelectedPath(path: String) {
         _selectedPath.value = path
@@ -167,12 +176,30 @@ class CustomCleanerViewModel(
                 withContext(Dispatchers.Main) {
                     if (_scanState.value is CustomScanState.Completed) {
                         val rootNode = (_scanState.value as CustomScanState.Completed).rootNode
-                        _scanState.value = CustomScanState.Completed(rootNode)
+                        val parent = findParentNode(rootNode, node.path)
+                        _selectedNode.value = parent ?: rootNode
+                        _scanState.value = CustomScanState.Completed(rootNode, ++stateVersion)
                     }
                 }
             }
             _isDeleting.value = false
         }
+    }
+
+    fun toggleSortMode() {
+        _sortMode.value = when (_sortMode.value) {
+            SortMode.NAME -> SortMode.SIZE
+            SortMode.SIZE -> SortMode.NAME
+        }
+    }
+
+    private fun findParentNode(root: FileTreeNode, targetPath: String): FileTreeNode? {
+        for (child in root.children) {
+            if (child.path == targetPath) return root
+            val found = findParentNode(child, targetPath)
+            if (found != null) return found
+        }
+        return null
     }
 
     private fun updateParentSizes(deletedNode: FileTreeNode, deletedSize: Long) {

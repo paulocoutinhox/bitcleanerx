@@ -8,7 +8,7 @@ A cross-platform desktop application for cleaning up system junk files and freei
 Clean predefined system files and folders with a single click:
 - Scans configured directories for common junk files
 - Groups items by category (cache, logs, derived data, etc.)
-- Shows total size of reclaimable space
+- Shows the total size of reclaimable space
 - Displays human-readable names for system folders (e.g., Xcode simulators)
 - Allows selective deletion of items or entire groups
 

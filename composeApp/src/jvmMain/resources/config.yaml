@@ -1,4 +1,15 @@
 macosList:
+
+  - groupName: Universal Dev Caches
+    groupImage: cache
+    items:
+      - name: User Library Caches
+        type: folder
+        path: ~/Library/Caches
+      - name: Logs
+        type: folder
+        path: ~/Library/Logs
+
   - groupName: Xcode Junk
     groupImage: xcode
     items:
@@ -14,23 +25,19 @@ macosList:
       - name: Core Simulator Caches
         type: folder
         path: ~/Library/Developer/CoreSimulator/Caches
-      - name: Xcode Playground's Project Cache
+      - name: Xcode Playground Cache
         type: folder
         path: ~/Library/Developer/XCPGDevices
       - name: Xcode Previews
         type: folder
         path: ~/Library/Developer/Xcode/UserData/Previews
 
-  - groupName: Device Simulators
+  - groupName: iOS Simulators
     groupImage: simulator
     items:
       - name: Simulator Devices
         type: folders
         path: ~/Library/Developer/CoreSimulator/Devices
-
-  - groupName: Device Simulator Runtimes
-    groupImage: runtime
-    items:
       - name: Simulator Runtimes
         type: folders
         path: ~/Library/Developer/CoreSimulator/Runtimes
@@ -44,6 +51,66 @@ macosList:
       - name: Android Build Cache
         type: folder
         path: ~/.android/build-cache
+      - name: Android AVD
+        type: folders
+        path: ~/.android/avd
+
+  - groupName: Node & JS
+    groupImage: node
+    items:
+      - name: NPM Cache
+        type: folder
+        path: ~/.npm
+      - name: Yarn Cache
+        type: folder
+        path: ~/.cache/yarn
+      - name: PNPM Store
+        type: folder
+        path: ~/.pnpm-store
+
+  - groupName: Python
+    groupImage: python
+    items:
+      - name: Pip Cache
+        type: folder
+        path: ~/.cache/pip
+      - name: Pyenv Versions
+        type: folders
+        path: ~/.pyenv/versions
+
+  - groupName: Java & JVM
+    groupImage: java
+    items:
+      - name: Maven Repository
+        type: folder
+        path: ~/.m2/repository
+      - name: Gradle Global Cache
+        type: folder
+        path: ~/.gradle/caches
+
+  - groupName: Rust
+    groupImage: rust
+    items:
+      - name: Cargo Registry
+        type: folder
+        path: ~/.cargo/registry
+      - name: Cargo Git Cache
+        type: folder
+        path: ~/.cargo/git
+
+  - groupName: Go
+    groupImage: go
+    items:
+      - name: Go Build Cache
+        type: folder
+        path: ~/Library/Caches/go-build
+
+  - groupName: Docker
+    groupImage: docker
+    items:
+      - name: Docker Data
+        type: folder
+        path: ~/Library/Containers/com.docker.docker/Data
 
   - groupName: Homebrew
     groupImage: homebrew
@@ -55,18 +122,97 @@ macosList:
         type: folder
         path: ~/Library/Caches/Homebrew/downloads
 
+  - groupName: Editors
+    groupImage: ide
+    items:
+      - name: VSCode Cache
+        type: folder
+        path: ~/Library/Caches/com.microsoft.VSCode
+      - name: VSCode App Support
+        type: folder
+        path: ~/Library/Application Support/Code
+      - name: JetBrains Cache
+        type: folder
+        path: ~/Library/Caches/JetBrains
+      - name: JetBrains App Support
+        type: folder
+        path: ~/Library/Application Support/JetBrains
+
+  - groupName: Browsers
+    groupImage: browser
+    items:
+      - name: Chrome Cache
+        type: folder
+        path: ~/Library/Caches/Google/Chrome
+      - name: Firefox Cache
+        type: folder
+        path: ~/Library/Caches/Firefox
+
 windowsList:
+
+  - groupName: Universal Dev Caches
+    groupImage: cache
+    items:
+      - name: Temp
+        type: folder
+        path: ~\AppData\Local\Temp
+      - name: Local Cache
+        type: folder
+        path: ~\AppData\Local\Cache
+
   - groupName: Visual Studio
     groupImage: visualstudio
     items:
-      - name: VS Cache
+      - name: VS Component Cache
         type: folder
         path: ~\AppData\Local\Microsoft\VisualStudio\ComponentModelCache
       - name: VS Temp
         type: folder
         path: ~\AppData\Local\Temp\VisualStudioEditing
 
+  - groupName: Node & JS
+    groupImage: node
+    items:
+      - name: NPM Cache
+        type: folder
+        path: ~\AppData\Roaming\npm-cache
+
+  - groupName: Maven
+    groupImage: java
+    items:
+      - name: Maven Repository
+        type: folder
+        path: ~\.m2\repository
+
+  - groupName: Docker
+    groupImage: docker
+    items:
+      - name: Docker Data
+        type: folder
+        path: ~\AppData\Local\Docker
+
+  - groupName: VSCode
+    groupImage: ide
+    items:
+      - name: VSCode Cache
+        type: folder
+        path: ~\AppData\Local\Code\Cache
+      - name: VSCode AppData
+        type: folder
+        path: ~\AppData\Roaming\Code
+
 linuxList:
+
+  - groupName: Universal Dev Caches
+    groupImage: cache
+    items:
+      - name: User Cache
+        type: folder
+        path: ~/.cache
+      - name: Logs
+        type: folder
+        path: ~/.local/share
+
   - groupName: Package Manager
     groupImage: system
     items:
@@ -74,6 +220,47 @@ linuxList:
         type: folder
         path: /var/cache/apt/archives
 
-iosList: [ ]
+  - groupName: Node & JS
+    groupImage: node
+    items:
+      - name: NPM Cache
+        type: folder
+        path: ~/.npm
+      - name: Yarn Cache
+        type: folder
+        path: ~/.cache/yarn
 
-androidList: [ ]
+  - groupName: Python
+    groupImage: python
+    items:
+      - name: Pip Cache
+        type: folder
+        path: ~/.cache/pip
+
+  - groupName: Maven
+    groupImage: java
+    items:
+      - name: Maven Repository
+        type: folder
+        path: ~/.m2/repository
+
+  - groupName: Rust
+    groupImage: rust
+    items:
+      - name: Cargo Registry
+        type: folder
+        path: ~/.cargo/registry
+
+  - groupName: Go
+    groupImage: go
+    items:
+      - name: Go Build Cache
+        type: folder
+        path: ~/.cache/go-build
+
+  - groupName: Docker
+    groupImage: docker
+    items:
+      - name: Docker Data
+        type: folder
+        path: /var/lib/docker

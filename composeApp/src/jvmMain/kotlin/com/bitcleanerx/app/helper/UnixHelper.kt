@@ -24,25 +24,22 @@ object UnixHelper {
      */
     fun calculateSizeUsingDu(path: String): Long {
         return try {
-            // Use 'du -skP' to get size in kilobytes without following symlinks
+            // use 'du -skP' to get size in kilobytes without following symlinks
             // -s: summarize (display only total)
             // -k: use 1024-byte blocks
-            // -P: do not follow symbolic links (explicit, though it's the default)
+            // -P: do not follow symbolic links
             val process = ProcessBuilder("du", "-skP", path)
-                .redirectErrorStream(true)
+                .redirectError(ProcessBuilder.Redirect.DISCARD)
                 .start()
 
+            // read stdout before waitFor to prevent buffer deadlock
+            val output = process.inputStream.bufferedReader().readLine()
             process.waitFor()
 
-            if (process.exitValue() != 0) {
-                return -1L
-            }
+            if (output == null) return -1L
 
-            val output = process.inputStream.bufferedReader().readLine() ?: return -1L
-            // Output format: "12345\t/path/to/dir"
+            // output format: "12345\t/path/to/dir"
             val sizeInKB = output.split("\t", " ")[0].toLongOrNull() ?: return -1L
-
-            // Convert KB to bytes
             sizeInKB * 1024
         } catch (e: Exception) {
             -1L

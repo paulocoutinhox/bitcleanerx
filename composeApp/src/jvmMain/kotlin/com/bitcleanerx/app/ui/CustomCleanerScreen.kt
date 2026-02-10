@@ -25,6 +25,7 @@ import com.bitcleanerx.app.viewmodel.CustomCleanerViewModel
 import com.bitcleanerx.app.viewmodel.CustomScanState
 import com.bitcleanerx.app.viewmodel.PieChartData
 import com.bitcleanerx.app.viewmodel.ResultsViewModel
+import com.bitcleanerx.app.viewmodel.SortMode
 import javax.swing.JFileChooser
 
 @Composable
@@ -38,6 +39,7 @@ fun CustomCleanerScreen(
     val isDeleting by viewModel.isDeleting.collectAsState()
     val selectedNode by viewModel.selectedNode.collectAsState()
     val expandedNodes by viewModel.expandedNodes.collectAsState()
+    val sortMode by viewModel.sortMode.collectAsState()
 
     var showDeleteDialog by remember { mutableStateOf(false) }
     var nodeToDelete by remember { mutableStateOf<FileTreeNode?>(null) }
@@ -73,8 +75,10 @@ fun CustomCleanerScreen(
                     rootNode = state.rootNode,
                     selectedNode = selectedNode,
                     expandedNodes = expandedNodes,
+                    sortMode = sortMode,
                     onSelectNode = { viewModel.selectNode(it) },
                     onToggleExpansion = { viewModel.toggleNodeExpansion(it) },
+                    onToggleSortMode = { viewModel.toggleSortMode() },
                     onOpenFolder = { viewModel.openFolder(it.path) },
                     onDeleteNode = { node ->
                         nodeToDelete = node
@@ -231,8 +235,10 @@ private fun CompletedState(
     rootNode: FileTreeNode,
     selectedNode: FileTreeNode?,
     expandedNodes: Set<String>,
+    sortMode: SortMode,
     onSelectNode: (FileTreeNode) -> Unit,
     onToggleExpansion: (String) -> Unit,
+    onToggleSortMode: () -> Unit,
     onOpenFolder: (FileTreeNode) -> Unit,
     onDeleteNode: (FileTreeNode) -> Unit,
     onCancelScan: () -> Unit,
@@ -244,11 +250,38 @@ private fun CompletedState(
                 .weight(0.4f)
                 .fillMaxHeight()
         ) {
-            Text(
-                text = "Folders",
-                style = MaterialTheme.typography.headlineSmall,
-                color = MaterialTheme.colorScheme.onBackground
-            )
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = "Folders",
+                    style = MaterialTheme.typography.headlineSmall,
+                    color = MaterialTheme.colorScheme.onBackground
+                )
+                OutlinedButton(
+                    onClick = onToggleSortMode,
+                    contentPadding = PaddingValues(horizontal = 12.dp, vertical = 6.dp)
+                ) {
+                    Icon(
+                        imageVector = when (sortMode) {
+                            SortMode.NAME -> Icons.Default.SortByAlpha
+                            SortMode.SIZE -> Icons.Default.Storage
+                        },
+                        contentDescription = null,
+                        modifier = Modifier.size(18.dp)
+                    )
+                    Spacer(modifier = Modifier.width(6.dp))
+                    Text(
+                        text = when (sortMode) {
+                            SortMode.NAME -> "Name"
+                            SortMode.SIZE -> "Size"
+                        },
+                        style = MaterialTheme.typography.bodySmall
+                    )
+                }
+            }
             Spacer(modifier = Modifier.height(8.dp))
             OutlinedButton(
                 onClick = onCancelScan,
@@ -273,6 +306,7 @@ private fun CompletedState(
                             level = 0,
                             selectedNode = selectedNode,
                             expandedNodes = expandedNodes,
+                            sortMode = sortMode,
                             onNodeClick = onSelectNode,
                             onToggleExpansion = onToggleExpansion
                         )
@@ -352,6 +386,7 @@ private fun TreeNodeItem(
     level: Int,
     selectedNode: FileTreeNode?,
     expandedNodes: Set<String>,
+    sortMode: SortMode,
     onNodeClick: (FileTreeNode) -> Unit,
     onToggleExpansion: (String) -> Unit
 ) {
@@ -417,13 +452,18 @@ private fun TreeNodeItem(
         }
 
         if (expanded && node.children.isNotEmpty()) {
+            val sortedChildren = when (sortMode) {
+                SortMode.NAME -> node.children.filter { !it.isDeleted }.sortedBy { it.name.lowercase() }
+                SortMode.SIZE -> node.children.filter { !it.isDeleted }.sortedByDescending { it.size }
+            }
             Column {
-                node.children.filter { !it.isDeleted }.forEach { child ->
+                sortedChildren.forEach { child ->
                     TreeNodeItem(
                         node = child,
                         level = level + 1,
                         selectedNode = selectedNode,
                         expandedNodes = expandedNodes,
+                        sortMode = sortMode,
                         onNodeClick = onNodeClick,
                         onToggleExpansion = onToggleExpansion
                     )
