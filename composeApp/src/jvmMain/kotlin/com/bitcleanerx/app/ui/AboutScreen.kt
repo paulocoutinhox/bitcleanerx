@@ -70,7 +70,7 @@ fun AboutScreen() {
                     Spacer(modifier = Modifier.height(8.dp))
 
                     Text(
-                        text = "Version 1.0.0",
+                        text = "Version 1.1.0",
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
                     )
@@ -84,7 +84,7 @@ fun AboutScreen() {
                     InfoItem(
                         icon = Icons.Default.Person,
                         label = "Developer",
-                        value = "Paulo Developer"
+                        value = "Paulo Coutinho"
                     )
 
                     Spacer(modifier = Modifier.height(16.dp))
@@ -92,8 +92,8 @@ fun AboutScreen() {
                     LinkItem(
                         icon = Icons.Default.Language,
                         label = "Website",
-                        value = "https://bitcleanerx.com",
-                        onClick = { openUrl("https://bitcleanerx.com") }
+                        value = "https://paulocoutinho.pages.dev/bitcleanerx/home/",
+                        onClick = { openUrl("https://paulocoutinho.pages.dev/bitcleanerx/home/") }
                     )
 
                     Spacer(modifier = Modifier.height(16.dp))
@@ -101,8 +101,8 @@ fun AboutScreen() {
                     LinkItem(
                         icon = Icons.Default.Code,
                         label = "GitHub",
-                        value = "github.com/paulo/bitcleanerx",
-                        onClick = { openUrl("https://github.com/paulo/bitcleanerx") }
+                        value = "github.com/paulocoutinhox/bitcleanerx",
+                        onClick = { openUrl("https://github.com/paulocoutinhox/bitcleanerx") }
                     )
 
                     Spacer(modifier = Modifier.height(32.dp))
@@ -120,7 +120,7 @@ fun AboutScreen() {
                     Spacer(modifier = Modifier.height(8.dp))
 
                     Text(
-                        text = "© 2025 BitCleanerX. All rights reserved.",
+                        text = "© 2026 BitCleanerX. All rights reserved.",
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f)
                     )

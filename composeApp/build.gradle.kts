@@ -1,7 +1,7 @@
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 
 group = "com.bitcleanerx"
-version = "1.0.0"
+version = "1.1.0"
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
@@ -49,7 +49,7 @@ compose.desktop {
             packageName = "BitCleanerX"
             packageVersion = version.toString()
             appResourcesRootDir.set(project.layout.projectDirectory.dir("resources"))
-            copyright = "2025 Paulo Coutinho. All rights reserved."
+            copyright = "2026 Paulo Coutinho. All rights reserved."
             vendor = "Paulo Coutinho"
             licenseFile.set(project.file("../LICENSE.txt"))
             modules(

@@ -25,9 +25,6 @@ object WindowsHelper {
      */
     fun calculateSizeUsingPowerShell(path: String): Long {
         return try {
-            // Use PowerShell to calculate directory size
-            // Get-ChildItem by default does NOT follow symbolic links (reparse points)
-            // Only follows if -FollowSymlink flag is explicitly added
             val command = listOf(
                 "powershell.exe",
                 "-Command",
@@ -35,16 +32,13 @@ object WindowsHelper {
             )
 
             val process = ProcessBuilder(command)
-                .redirectErrorStream(true)
+                .redirectError(ProcessBuilder.Redirect.DISCARD)
                 .start()
 
+            val output = process.inputStream.bufferedReader().readLine()?.trim()
             process.waitFor()
 
-            if (process.exitValue() != 0) {
-                return -1L
-            }
-
-            val output = process.inputStream.bufferedReader().readLine()?.trim() ?: return -1L
+            if (output == null) return -1L
             output.toLongOrNull() ?: -1L
         } catch (e: Exception) {
             -1L
