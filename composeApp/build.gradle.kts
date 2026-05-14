@@ -1,7 +1,7 @@
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 
 group = "com.bitcleanerx"
-version = "1.1.0"
+version = "1.2.0"
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
@@ -9,6 +9,28 @@ plugins {
     alias(libs.plugins.composeCompiler)
     alias(libs.plugins.composeHotReload)
     alias(libs.plugins.kotlinx.serialization)
+}
+
+val generateBuildConfig by tasks.registering {
+    val outputDir = layout.buildDirectory.dir("generated/source/buildConfig/jvmMain/kotlin")
+    val appVersion = project.version.toString()
+
+    inputs.property("appVersion", appVersion)
+    outputs.dir(outputDir)
+
+    doLast {
+        val packageDir = outputDir.get().asFile.resolve("com/bitcleanerx/app")
+        packageDir.mkdirs()
+        packageDir.resolve("BuildConfig.kt").writeText(
+            """
+            package com.bitcleanerx.app
+
+            object BuildConfig {
+                const val APP_VERSION = "$appVersion"
+            }
+            """.trimIndent() + "\n"
+        )
+    }
 }
 
 kotlin {
@@ -32,9 +54,12 @@ kotlin {
         commonTest.dependencies {
             implementation(libs.kotlin.test)
         }
-        jvmMain.dependencies {
-            implementation(compose.desktop.currentOs)
-            implementation(libs.kotlinx.coroutinesSwing)
+        jvmMain {
+            kotlin.srcDir(generateBuildConfig)
+            dependencies {
+                implementation(compose.desktop.currentOs)
+                implementation(libs.kotlinx.coroutinesSwing)
+            }
         }
     }
 }

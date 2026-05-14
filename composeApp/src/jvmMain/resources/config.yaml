@@ -9,6 +9,9 @@ macosList:
       - name: Logs
         type: folder
         path: ~/Library/Logs
+      - name: Group Containers
+        type: folder
+        path: ~/Library/Group Containers
 
   - groupName: Xcode Junk
     groupImage: xcode
@@ -31,6 +34,9 @@ macosList:
       - name: Xcode Previews
         type: folder
         path: ~/Library/Developer/Xcode/UserData/Previews
+      - name: CoreDevice Cache
+        type: folder
+        path: ~/Library/Caches/com.apple.CoreDevice.CoreDeviceService
 
   - groupName: iOS Simulators
     groupImage: simulator
@@ -41,6 +47,29 @@ macosList:
       - name: Simulator Runtimes
         type: folders
         path: ~/Library/Developer/CoreSimulator/Runtimes
+
+  - groupName: Swift Package Manager
+    groupImage: swift
+    items:
+      - name: SwiftPM Cache
+        type: folder
+        path: ~/Library/Caches/org.swift.swiftpm
+      - name: SwiftPM Repositories
+        type: folder
+        path: ~/Library/org.swift.swiftpm
+      - name: Swift Package Artifacts
+        type: folder
+        path: ~/Library/Caches/org.swift.swiftpm/repositories
+
+  - groupName: CocoaPods
+    groupImage: cocoapods
+    items:
+      - name: CocoaPods Cache
+        type: folder
+        path: ~/Library/Caches/CocoaPods
+      - name: CocoaPods Repos
+        type: folder
+        path: ~/.cocoapods
 
   - groupName: Android Studio
     groupImage: android
@@ -54,6 +83,9 @@ macosList:
       - name: Android AVD
         type: folders
         path: ~/.android/avd
+      - name: Android SDK
+        type: folder
+        path: ~/Library/Android
 
   - groupName: Node & JS
     groupImage: node
@@ -64,9 +96,25 @@ macosList:
       - name: Yarn Cache
         type: folder
         path: ~/.cache/yarn
+      - name: Yarn Berry Cache
+        type: folder
+        path: ~/.yarn
       - name: PNPM Store
         type: folder
         path: ~/.pnpm-store
+      - name: PNPM Home
+        type: folder
+        path: ~/Library/pnpm
+      - name: Electron GYP Cache
+        type: folder
+        path: ~/.electron-gyp
+
+  - groupName: Bun
+    groupImage: bun
+    items:
+      - name: Bun Cache
+        type: folder
+        path: ~/.bun
 
   - groupName: Python
     groupImage: python
@@ -77,6 +125,251 @@ macosList:
       - name: Pyenv Versions
         type: folders
         path: ~/.pyenv/versions
+      - name: UV Cache
+        type: folder
+        path: ~/.cache/uv
+      - name: WebDriver Manager Cache
+        type: folder
+        path: ~/.wdm
+      - name: Jupyter Config
+        type: folder
+        path: ~/.jupyter
+
+  - groupName: Conda
+    groupImage: python
+    items:
+      - name: Conda Install
+        type: folder
+        path: ~/miniconda3
+      - name: Conda Package Cache
+        type: folder
+        path: ~/miniconda3/pkgs
+
+  - groupName: Flutter & Dart
+    groupImage: flutter
+    items:
+      - name: Pub Cache
+        type: folder
+        path: ~/.pub-cache
+      - name: Dart Server
+        type: folder
+        path: ~/.dartServer
+
+  - groupName: Ruby
+    groupImage: ruby
+    items:
+      - name: Ruby Gems
+        type: folder
+        path: ~/.gems
+
+  - groupName: Debuggers
+    groupImage: debugger
+    items:
+      - name: LLDB
+        type: folder
+        path: ~/.lldb
+
+  - groupName: CMake
+    groupImage: cmake
+    items:
+      - name: CPM Source Cache
+        type: folder
+        path: ~/.cache/CPM
+
+  - groupName: Hugging Face
+    groupImage: huggingface
+    items:
+      - name: Hugging Face Cache
+        type: folder
+        path: ~/.cache/huggingface
+      - name: Torch Cache
+        type: folder
+        path: ~/.cache/torch
+
+  - groupName: Zig
+    groupImage: zig
+    items:
+      - name: Zig Cache
+        type: folder
+        path: ~/.cache/zig
+
+  - groupName: Browser Automation
+    groupImage: browser
+    items:
+      - name: Playwright Browsers
+        type: folder
+        path: ~/Library/Caches/ms-playwright
+      - name: Selenium Drivers
+        type: folder
+        path: ~/.cache/selenium
+
+  - groupName: AI Apps
+    groupImage: ai
+    items:
+      - name: Claude Desktop
+        type: folder
+        path: ~/Library/Application Support/Claude
+
+  - groupName: AI Models
+    groupImage: ai
+    items:
+      - name: Ollama Models
+        type: folder
+        path: ~/.ollama
+      - name: LM Studio Models
+        type: folder
+        path: ~/.cache/lm-studio
+      - name: ComfyUI Models
+        type: folder
+        path: ~/ComfyUI/models
+      - name: Stable Diffusion Models
+        type: folder
+        path: ~/stable-diffusion-webui/models
+
+  - groupName: Game Engines
+    groupImage: unity
+    items:
+      - name: Unity Cache
+        type: folder
+        path: ~/Library/Unity
+      - name: Unreal Derived Data Cache
+        type: folder
+        path: ~/Library/Application Support/Epic/UnrealEngine/Common/DerivedDataCache
+
+  - groupName: Gaming
+    groupImage: gaming
+    items:
+      - name: Steam Shader Cache
+        type: folder
+        path: ~/Library/Application Support/Steam
+
+  - groupName: Virtual Machines
+    groupImage: vm
+    items:
+      - name: Parallels VMs
+        type: folder
+        path: ~/Parallels
+      - name: VMware VMs
+        type: folder
+        path: ~/Documents/Virtual Machines.localized
+
+  - groupName: Cloud SDKs
+    groupImage: cloud
+    items:
+      - name: AWS CLI
+        type: folder
+        path: ~/.aws
+      - name: Azure CLI
+        type: folder
+        path: ~/.azure
+      - name: Google Cloud SDK
+        type: folder
+        path: ~/.config/gcloud
+
+  - groupName: Kubernetes
+    groupImage: kubernetes
+    items:
+      - name: Minikube
+        type: folder
+        path: ~/.minikube
+      - name: Kubernetes Cache
+        type: folder
+        path: ~/.kube/cache
+
+  - groupName: Deployment
+    groupImage: deploy
+    items:
+      - name: Vercel Cache
+        type: folder
+        path: ~/.vercel
+      - name: Netlify Cache
+        type: folder
+        path: ~/.netlify
+      - name: Expo Cache
+        type: folder
+        path: ~/.expo
+      - name: Firebase Emulator Cache
+        type: folder
+        path: ~/.cache/firebase
+
+  - groupName: API Tools
+    groupImage: api
+    items:
+      - name: Postman Cache
+        type: folder
+        path: ~/Library/Application Support/Postman
+      - name: Insomnia Cache
+        type: folder
+        path: ~/Library/Application Support/Insomnia
+
+  - groupName: Apple Devices
+    groupImage: apple
+    items:
+      - name: iPhone & iPad Backups
+        type: folder
+        path: ~/Library/Application Support/MobileSync/Backup
+      - name: Mail Downloads
+        type: folder
+        path: ~/Library/Containers/com.apple.mail/Data/Library/Mail Downloads
+      - name: Messages Attachments
+        type: folder
+        path: ~/Library/Messages/Attachments
+
+  - groupName: Communication
+    groupImage: chat
+    items:
+      - name: WhatsApp Media
+        type: folder
+        path: ~/Library/Group Containers/group.net.whatsapp.WhatsApp.shared
+      - name: Telegram Desktop
+        type: folder
+        path: ~/Library/Application Support/Telegram Desktop
+      - name: Discord Cache
+        type: folder
+        path: ~/Library/Application Support/discord
+      - name: Slack Cache
+        type: folder
+        path: ~/Library/Application Support/Slack
+      - name: Zoom Cache
+        type: folder
+        path: ~/Library/Application Support/zoom.us
+
+  - groupName: Media & Productivity
+    groupImage: apps
+    items:
+      - name: Spotify Cache
+        type: folder
+        path: ~/Library/Application Support/Spotify/PersistentCache
+      - name: Notion Cache
+        type: folder
+        path: ~/Library/Application Support/Notion
+      - name: Figma Cache
+        type: folder
+        path: ~/Library/Application Support/Figma
+      - name: OBS Studio
+        type: folder
+        path: ~/Library/Application Support/obs-studio
+
+  - groupName: Adobe
+    groupImage: adobe
+    items:
+      - name: Adobe Media Cache
+        type: folder
+        path: ~/Library/Application Support/Adobe/Common
+
+  - groupName: Video Editors
+    groupImage: video
+    items:
+      - name: DaVinci Resolve Cache
+        type: folder
+        path: ~/Movies/DaVinci Resolve
+
+  - groupName: System
+    groupImage: system
+    items:
+      - name: Trash
+        type: folder
+        path: ~/.Trash
 
   - groupName: Java & JVM
     groupImage: java
@@ -110,7 +403,7 @@ macosList:
     items:
       - name: Docker Data
         type: folder
-        path: ~/Library/Containers/com.docker.docker/Data
+        path: ~/Library/Containers/com.docker.docker
 
   - groupName: Homebrew
     groupImage: homebrew
@@ -131,12 +424,30 @@ macosList:
       - name: VSCode App Support
         type: folder
         path: ~/Library/Application Support/Code
+      - name: VSCode OSS
+        type: folder
+        path: ~/.vscode-oss
+      - name: Cursor
+        type: folder
+        path: ~/.cursor
+      - name: Cursor App Support
+        type: folder
+        path: ~/Library/Application Support/Cursor
+      - name: Cursor Server
+        type: folder
+        path: ~/.cursor-server
+      - name: Codeium / Windsurf
+        type: folder
+        path: ~/.codeium
       - name: JetBrains Cache
         type: folder
         path: ~/Library/Caches/JetBrains
       - name: JetBrains App Support
         type: folder
         path: ~/Library/Application Support/JetBrains
+      - name: GitHub Desktop
+        type: folder
+        path: ~/Library/Application Support/GitHub Desktop
 
   - groupName: Browsers
     groupImage: browser
@@ -144,9 +455,27 @@ macosList:
       - name: Chrome Cache
         type: folder
         path: ~/Library/Caches/Google/Chrome
+      - name: Chrome GPU Cache
+        type: folder
+        path: ~/Library/Application Support/Google/Chrome/Default/GPUCache
       - name: Firefox Cache
         type: folder
         path: ~/Library/Caches/Firefox
+      - name: Safari WebKit Cache
+        type: folder
+        path: ~/Library/Caches/com.apple.Safari
+      - name: Safari Website Data
+        type: folder
+        path: ~/Library/Safari
+      - name: Arc Browser
+        type: folder
+        path: ~/Library/Application Support/Arc
+      - name: Brave Browser
+        type: folder
+        path: ~/Library/Application Support/BraveSoftware
+      - name: Microsoft Edge
+        type: folder
+        path: ~/Library/Application Support/Microsoft Edge
 
 windowsList:
 
@@ -170,12 +499,266 @@ windowsList:
         type: folder
         path: ~\AppData\Local\Temp\VisualStudioEditing
 
+  - groupName: Android Studio
+    groupImage: android
+    items:
+      - name: Gradle Caches
+        type: folder
+        path: ~\.gradle\caches
+      - name: Android Build Cache
+        type: folder
+        path: ~\.android\build-cache
+      - name: Android AVD
+        type: folders
+        path: ~\.android\avd
+      - name: Android SDK
+        type: folder
+        path: ~\AppData\Local\Android
+
   - groupName: Node & JS
     groupImage: node
     items:
       - name: NPM Cache
         type: folder
         path: ~\AppData\Roaming\npm-cache
+      - name: Yarn Berry Cache
+        type: folder
+        path: ~\.yarn
+      - name: PNPM Store
+        type: folder
+        path: ~\.pnpm-store
+      - name: PNPM Home
+        type: folder
+        path: ~\AppData\Local\pnpm
+      - name: Electron GYP Cache
+        type: folder
+        path: ~\.electron-gyp
+
+  - groupName: Bun
+    groupImage: bun
+    items:
+      - name: Bun Cache
+        type: folder
+        path: ~\.bun
+
+  - groupName: Python
+    groupImage: python
+    items:
+      - name: UV Cache
+        type: folder
+        path: ~\AppData\Local\uv\cache
+      - name: WebDriver Manager Cache
+        type: folder
+        path: ~\.wdm
+      - name: Jupyter Config
+        type: folder
+        path: ~\.jupyter
+
+  - groupName: Conda
+    groupImage: python
+    items:
+      - name: Conda Install
+        type: folder
+        path: ~\miniconda3
+      - name: Conda Package Cache
+        type: folder
+        path: ~\miniconda3\pkgs
+
+  - groupName: Flutter & Dart
+    groupImage: flutter
+    items:
+      - name: Pub Cache
+        type: folder
+        path: ~\AppData\Local\Pub\Cache
+      - name: Dart Server
+        type: folder
+        path: ~\.dartServer
+
+  - groupName: Ruby
+    groupImage: ruby
+    items:
+      - name: Ruby Gems
+        type: folder
+        path: ~\.gem
+
+  - groupName: CMake
+    groupImage: cmake
+    items:
+      - name: CPM Source Cache
+        type: folder
+        path: ~\.cache\CPM
+
+  - groupName: Hugging Face
+    groupImage: huggingface
+    items:
+      - name: Hugging Face Cache
+        type: folder
+        path: ~\.cache\huggingface
+      - name: Torch Cache
+        type: folder
+        path: ~\.cache\torch
+
+  - groupName: Zig
+    groupImage: zig
+    items:
+      - name: Zig Cache
+        type: folder
+        path: ~\AppData\Local\zig
+
+  - groupName: Browser Automation
+    groupImage: browser
+    items:
+      - name: Playwright Browsers
+        type: folder
+        path: ~\AppData\Local\ms-playwright
+      - name: Selenium Drivers
+        type: folder
+        path: ~\.cache\selenium
+
+  - groupName: AI Apps
+    groupImage: ai
+    items:
+      - name: Claude Desktop
+        type: folder
+        path: ~\AppData\Roaming\Claude
+
+  - groupName: AI Models
+    groupImage: ai
+    items:
+      - name: Ollama Models
+        type: folder
+        path: ~\.ollama
+      - name: LM Studio Models
+        type: folder
+        path: ~\.cache\lm-studio
+      - name: ComfyUI Models
+        type: folder
+        path: ~\ComfyUI\models
+      - name: Stable Diffusion Models
+        type: folder
+        path: ~\stable-diffusion-webui\models
+
+  - groupName: Game Engines
+    groupImage: unity
+    items:
+      - name: Unity Cache
+        type: folder
+        path: ~\AppData\Local\Unity\cache
+      - name: Unreal Derived Data Cache
+        type: folder
+        path: ~\AppData\Local\UnrealEngine\Common\DerivedDataCache
+
+  - groupName: Virtual Machines
+    groupImage: vm
+    items:
+      - name: VMware VMs
+        type: folder
+        path: ~\Documents\Virtual Machines
+
+  - groupName: Cloud SDKs
+    groupImage: cloud
+    items:
+      - name: AWS CLI
+        type: folder
+        path: ~\.aws
+      - name: Azure CLI
+        type: folder
+        path: ~\.azure
+      - name: Google Cloud SDK
+        type: folder
+        path: ~\AppData\Roaming\gcloud
+
+  - groupName: Kubernetes
+    groupImage: kubernetes
+    items:
+      - name: Minikube
+        type: folder
+        path: ~\.minikube
+      - name: Kubernetes Cache
+        type: folder
+        path: ~\.kube\cache
+
+  - groupName: Deployment
+    groupImage: deploy
+    items:
+      - name: Vercel Cache
+        type: folder
+        path: ~\.vercel
+      - name: Netlify Cache
+        type: folder
+        path: ~\.netlify
+      - name: Expo Cache
+        type: folder
+        path: ~\.expo
+      - name: Firebase Emulator Cache
+        type: folder
+        path: ~\.cache\firebase
+
+  - groupName: API Tools
+    groupImage: api
+    items:
+      - name: Postman Cache
+        type: folder
+        path: ~\AppData\Roaming\Postman
+      - name: Insomnia Cache
+        type: folder
+        path: ~\AppData\Roaming\Insomnia
+
+  - groupName: Apple Devices
+    groupImage: apple
+    items:
+      - name: iPhone & iPad Backups
+        type: folder
+        path: ~\AppData\Roaming\Apple Computer\MobileSync\Backup
+
+  - groupName: Communication
+    groupImage: chat
+    items:
+      - name: WhatsApp
+        type: folder
+        path: ~\AppData\Roaming\WhatsApp
+      - name: Telegram Desktop
+        type: folder
+        path: ~\AppData\Roaming\Telegram Desktop
+      - name: Discord Cache
+        type: folder
+        path: ~\AppData\Roaming\discord
+      - name: Slack Cache
+        type: folder
+        path: ~\AppData\Roaming\Slack
+      - name: Zoom Cache
+        type: folder
+        path: ~\AppData\Roaming\Zoom
+
+  - groupName: Media & Productivity
+    groupImage: apps
+    items:
+      - name: Spotify Cache
+        type: folder
+        path: ~\AppData\Local\Spotify\Storage
+      - name: Notion Cache
+        type: folder
+        path: ~\AppData\Roaming\Notion
+      - name: Figma Cache
+        type: folder
+        path: ~\AppData\Roaming\Figma
+      - name: OBS Studio
+        type: folder
+        path: ~\AppData\Roaming\obs-studio
+
+  - groupName: Adobe
+    groupImage: adobe
+    items:
+      - name: Adobe Media Cache
+        type: folder
+        path: ~\AppData\Roaming\Adobe\Common
+
+  - groupName: Video Editors
+    groupImage: video
+    items:
+      - name: DaVinci Resolve Cache
+        type: folder
+        path: ~\Documents\Blackmagic Design\DaVinci Resolve
 
   - groupName: Maven
     groupImage: java
@@ -200,6 +783,37 @@ windowsList:
       - name: VSCode AppData
         type: folder
         path: ~\AppData\Roaming\Code
+      - name: VSCode OSS
+        type: folder
+        path: ~\.vscode-oss
+      - name: Cursor
+        type: folder
+        path: ~\.cursor
+      - name: Cursor App Support
+        type: folder
+        path: ~\AppData\Roaming\Cursor
+      - name: Cursor Server
+        type: folder
+        path: ~\.cursor-server
+      - name: Codeium / Windsurf
+        type: folder
+        path: ~\.codeium
+      - name: GitHub Desktop
+        type: folder
+        path: ~\AppData\Roaming\GitHub Desktop
+
+  - groupName: Browsers
+    groupImage: browser
+    items:
+      - name: Chrome GPU Cache
+        type: folder
+        path: ~\AppData\Local\Google\Chrome\User Data\Default\GPUCache
+      - name: Brave Browser
+        type: folder
+        path: ~\AppData\Local\BraveSoftware
+      - name: Microsoft Edge
+        type: folder
+        path: ~\AppData\Local\Microsoft\Edge
 
 linuxList:
 
@@ -220,6 +834,22 @@ linuxList:
         type: folder
         path: /var/cache/apt/archives
 
+  - groupName: Android Studio
+    groupImage: android
+    items:
+      - name: Gradle Caches
+        type: folder
+        path: ~/.gradle/caches
+      - name: Android Build Cache
+        type: folder
+        path: ~/.android/build-cache
+      - name: Android AVD
+        type: folders
+        path: ~/.android/avd
+      - name: Android SDK
+        type: folder
+        path: ~/Android
+
   - groupName: Node & JS
     groupImage: node
     items:
@@ -229,6 +859,25 @@ linuxList:
       - name: Yarn Cache
         type: folder
         path: ~/.cache/yarn
+      - name: Yarn Berry Cache
+        type: folder
+        path: ~/.yarn
+      - name: PNPM Store
+        type: folder
+        path: ~/.pnpm-store
+      - name: PNPM Home
+        type: folder
+        path: ~/.local/share/pnpm
+      - name: Electron GYP Cache
+        type: folder
+        path: ~/.electron-gyp
+
+  - groupName: Bun
+    groupImage: bun
+    items:
+      - name: Bun Cache
+        type: folder
+        path: ~/.bun
 
   - groupName: Python
     groupImage: python
@@ -236,6 +885,243 @@ linuxList:
       - name: Pip Cache
         type: folder
         path: ~/.cache/pip
+      - name: UV Cache
+        type: folder
+        path: ~/.cache/uv
+      - name: WebDriver Manager Cache
+        type: folder
+        path: ~/.wdm
+      - name: Jupyter Config
+        type: folder
+        path: ~/.jupyter
+
+  - groupName: Conda
+    groupImage: python
+    items:
+      - name: Conda Install
+        type: folder
+        path: ~/miniconda3
+      - name: Conda Package Cache
+        type: folder
+        path: ~/miniconda3/pkgs
+
+  - groupName: Flutter & Dart
+    groupImage: flutter
+    items:
+      - name: Pub Cache
+        type: folder
+        path: ~/.pub-cache
+      - name: Dart Server
+        type: folder
+        path: ~/.dartServer
+
+  - groupName: Ruby
+    groupImage: ruby
+    items:
+      - name: Ruby Gems
+        type: folder
+        path: ~/.gem
+
+  - groupName: Debuggers
+    groupImage: debugger
+    items:
+      - name: LLDB
+        type: folder
+        path: ~/.lldb
+
+  - groupName: Editors
+    groupImage: ide
+    items:
+      - name: VSCode OSS
+        type: folder
+        path: ~/.vscode-oss
+      - name: Cursor
+        type: folder
+        path: ~/.cursor
+      - name: Cursor App Support
+        type: folder
+        path: ~/.config/Cursor
+      - name: Cursor Server
+        type: folder
+        path: ~/.cursor-server
+      - name: Codeium / Windsurf
+        type: folder
+        path: ~/.codeium
+
+  - groupName: CMake
+    groupImage: cmake
+    items:
+      - name: CPM Source Cache
+        type: folder
+        path: ~/.cache/CPM
+
+  - groupName: Hugging Face
+    groupImage: huggingface
+    items:
+      - name: Hugging Face Cache
+        type: folder
+        path: ~/.cache/huggingface
+      - name: Torch Cache
+        type: folder
+        path: ~/.cache/torch
+
+  - groupName: Zig
+    groupImage: zig
+    items:
+      - name: Zig Cache
+        type: folder
+        path: ~/.cache/zig
+
+  - groupName: Browser Automation
+    groupImage: browser
+    items:
+      - name: Playwright Browsers
+        type: folder
+        path: ~/.cache/ms-playwright
+      - name: Selenium Drivers
+        type: folder
+        path: ~/.cache/selenium
+
+  - groupName: AI Apps
+    groupImage: ai
+    items:
+      - name: Claude Desktop
+        type: folder
+        path: ~/.config/Claude
+
+  - groupName: AI Models
+    groupImage: ai
+    items:
+      - name: Ollama Models
+        type: folder
+        path: ~/.ollama
+      - name: LM Studio Models
+        type: folder
+        path: ~/.cache/lm-studio
+      - name: ComfyUI Models
+        type: folder
+        path: ~/ComfyUI/models
+      - name: Stable Diffusion Models
+        type: folder
+        path: ~/stable-diffusion-webui/models
+
+  - groupName: Game Engines
+    groupImage: unity
+    items:
+      - name: Unity Cache
+        type: folder
+        path: ~/.config/unity3d
+      - name: Unreal Derived Data Cache
+        type: folder
+        path: ~/.config/Epic/UnrealEngine/Common/DerivedDataCache
+
+  - groupName: Gaming
+    groupImage: gaming
+    items:
+      - name: Steam Data
+        type: folder
+        path: ~/.local/share/Steam
+
+  - groupName: Cloud SDKs
+    groupImage: cloud
+    items:
+      - name: AWS CLI
+        type: folder
+        path: ~/.aws
+      - name: Azure CLI
+        type: folder
+        path: ~/.azure
+      - name: Google Cloud SDK
+        type: folder
+        path: ~/.config/gcloud
+
+  - groupName: Kubernetes
+    groupImage: kubernetes
+    items:
+      - name: Minikube
+        type: folder
+        path: ~/.minikube
+      - name: Kubernetes Cache
+        type: folder
+        path: ~/.kube/cache
+
+  - groupName: Deployment
+    groupImage: deploy
+    items:
+      - name: Vercel Cache
+        type: folder
+        path: ~/.vercel
+      - name: Netlify Cache
+        type: folder
+        path: ~/.netlify
+      - name: Expo Cache
+        type: folder
+        path: ~/.expo
+      - name: Firebase Emulator Cache
+        type: folder
+        path: ~/.cache/firebase
+
+  - groupName: API Tools
+    groupImage: api
+    items:
+      - name: Postman Cache
+        type: folder
+        path: ~/.config/Postman
+      - name: Insomnia Cache
+        type: folder
+        path: ~/.config/Insomnia
+
+  - groupName: Communication
+    groupImage: chat
+    items:
+      - name: WhatsApp
+        type: folder
+        path: ~/.config/WhatsApp
+      - name: Telegram Desktop
+        type: folder
+        path: ~/.local/share/TelegramDesktop
+      - name: Discord Cache
+        type: folder
+        path: ~/.config/discord
+      - name: Slack Cache
+        type: folder
+        path: ~/.config/Slack
+      - name: Zoom Cache
+        type: folder
+        path: ~/.zoom
+
+  - groupName: Media & Productivity
+    groupImage: apps
+    items:
+      - name: Spotify Cache
+        type: folder
+        path: ~/.cache/spotify
+      - name: Notion Cache
+        type: folder
+        path: ~/.config/Notion
+      - name: OBS Studio
+        type: folder
+        path: ~/.config/obs-studio
+
+  - groupName: Browsers
+    groupImage: browser
+    items:
+      - name: Brave Browser
+        type: folder
+        path: ~/.config/BraveSoftware
+      - name: Microsoft Edge
+        type: folder
+        path: ~/.config/microsoft-edge
+      - name: Chrome GPU Cache
+        type: folder
+        path: ~/.config/google-chrome/Default/GPUCache
+
+  - groupName: System
+    groupImage: system
+    items:
+      - name: Trash
+        type: folder
+        path: ~/.local/share/Trash
 
   - groupName: Maven
     groupImage: java

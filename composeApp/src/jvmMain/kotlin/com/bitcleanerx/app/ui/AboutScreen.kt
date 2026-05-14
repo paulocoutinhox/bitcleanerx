@@ -1,5 +1,6 @@
 package com.bitcleanerx.app.ui
 
+import com.bitcleanerx.app.BuildConfig
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -70,7 +71,7 @@ fun AboutScreen() {
                     Spacer(modifier = Modifier.height(8.dp))
 
                     Text(
-                        text = "Version 1.1.0",
+                        text = "Version ${BuildConfig.APP_VERSION}",
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
                     )
