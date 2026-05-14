@@ -1,7 +1,7 @@
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 
 group = "com.bitcleanerx"
-version = "1.1.0"
+version = "1.2.0"
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
@@ -11,18 +11,40 @@ plugins {
     alias(libs.plugins.kotlinx.serialization)
 }
 
+val generateBuildConfig by tasks.registering {
+    val outputDir = layout.buildDirectory.dir("generated/source/buildConfig/jvmMain/kotlin")
+    val appVersion = project.version.toString()
+
+    inputs.property("appVersion", appVersion)
+    outputs.dir(outputDir)
+
+    doLast {
+        val packageDir = outputDir.get().asFile.resolve("com/bitcleanerx/app")
+        packageDir.mkdirs()
+        packageDir.resolve("BuildConfig.kt").writeText(
+            """
+            package com.bitcleanerx.app
+
+            object BuildConfig {
+                const val APP_VERSION = "$appVersion"
+            }
+            """.trimIndent() + "\n"
+        )
+    }
+}
+
 kotlin {
     jvm()
 
     sourceSets {
         commonMain.dependencies {
-            implementation(compose.runtime)
-            implementation(compose.foundation)
-            implementation(compose.material3)
-            implementation(compose.materialIconsExtended)
-            implementation(compose.ui)
-            implementation(compose.components.resources)
-            implementation(compose.components.uiToolingPreview)
+            implementation(libs.compose.runtime)
+            implementation(libs.compose.foundation)
+            implementation(libs.compose.material3)
+            implementation(libs.compose.materialIconsExtended)
+            implementation(libs.compose.ui)
+            implementation(libs.compose.components.resources)
+            implementation(libs.compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
             implementation(libs.kaml)
@@ -32,9 +54,12 @@ kotlin {
         commonTest.dependencies {
             implementation(libs.kotlin.test)
         }
-        jvmMain.dependencies {
-            implementation(compose.desktop.currentOs)
-            implementation(libs.kotlinx.coroutinesSwing)
+        jvmMain {
+            kotlin.srcDir(generateBuildConfig)
+            dependencies {
+                implementation(compose.desktop.currentOs)
+                implementation(libs.kotlinx.coroutinesSwing)
+            }
         }
     }
 }

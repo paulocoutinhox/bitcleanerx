@@ -79,6 +79,16 @@ The Simple Cleaner uses a YAML configuration file (`config.yaml`) to define clea
 
 The generated installers will be available in `composeApp/build/compose/binaries/main/`.
 
+### Checking for Dependency Updates
+
+The project uses the [Gradle Versions Plugin](https://github.com/ben-manes/gradle-versions-plugin) to report outdated dependencies and Gradle versions:
+
+```bash
+./gradlew dependencyUpdates
+```
+
+The report is printed to the console and written to `build/dependencyUpdates/report.html` and `report.txt`. Pre-release versions (alpha, beta, rc, etc.) are filtered out when the current version is stable.
+
 ### Environment Variables
 
 For **macOS** distribution with code signing and notarization, you need to set the following environment variables:

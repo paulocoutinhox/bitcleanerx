@@ -8,10 +8,12 @@ import androidx.compose.material.icons.filled.DeleteSweep
 import androidx.compose.material.icons.filled.EmojiEvents
 import androidx.compose.material.icons.filled.FolderOpen
 import androidx.compose.material.icons.filled.Info
+import androidx.compose.foundation.Image
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.bitcleanerx.app.ui.AboutScreen
@@ -21,7 +23,9 @@ import com.bitcleanerx.app.ui.SimpleCleanerScreen
 import com.bitcleanerx.app.viewmodel.CustomCleanerViewModel
 import com.bitcleanerx.app.viewmodel.ResultsViewModel
 import com.bitcleanerx.app.viewmodel.StatsRepositoryImpl
-import org.jetbrains.compose.ui.tooling.preview.Preview
+import com.bitcleanerx.composeapp.generated.resources.Res
+import com.bitcleanerx.composeapp.generated.resources.rounded
+import org.jetbrains.compose.resources.painterResource
 
 enum class Screen {
     SIMPLE_CLEANER,
@@ -47,13 +51,21 @@ fun App() {
                     modifier = Modifier.fillMaxHeight().width(160.dp),
                     containerColor = MaterialTheme.colorScheme.surfaceVariant
                 ) {
-                    Spacer(modifier = Modifier.height(16.dp))
+                    Spacer(modifier = Modifier.height(24.dp))
+
+                    Image(
+                        painter = painterResource(Res.drawable.rounded),
+                        contentDescription = null,
+                        modifier = Modifier.size(72.dp).align(Alignment.CenterHorizontally)
+                    )
+
+                    Spacer(modifier = Modifier.height(4.dp))
 
                     Text(
                         text = "BitCleanerX",
-                        style = MaterialTheme.typography.titleLarge,
+                        style = MaterialTheme.typography.titleMedium,
                         color = MaterialTheme.colorScheme.primary,
-                        modifier = Modifier.padding(16.dp)
+                        modifier = Modifier.align(Alignment.CenterHorizontally)
                     )
 
                     Spacer(modifier = Modifier.height(32.dp))
