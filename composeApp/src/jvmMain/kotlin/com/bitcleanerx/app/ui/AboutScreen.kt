@@ -1,11 +1,11 @@
 package com.bitcleanerx.app.ui
 
 import com.bitcleanerx.app.BuildConfig
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Code
@@ -15,10 +15,12 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
+import com.bitcleanerx.composeapp.generated.resources.Res
+import com.bitcleanerx.composeapp.generated.resources.rounded
+import org.jetbrains.compose.resources.painterResource
 import java.awt.Desktop
 import java.net.URI
 
@@ -45,20 +47,11 @@ fun AboutScreen() {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 item {
-                    Box(
-                        modifier = Modifier
-                            .size(150.dp)
-                            .clip(CircleShape)
-                            .background(MaterialTheme.colorScheme.primaryContainer),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Icon(
-                            imageVector = Icons.Default.Person,
-                            contentDescription = null,
-                            modifier = Modifier.size(80.dp),
-                            tint = MaterialTheme.colorScheme.primary
-                        )
-                    }
+                    Image(
+                        painter = painterResource(Res.drawable.rounded),
+                        contentDescription = null,
+                        modifier = Modifier.size(150.dp)
+                    )
 
                     Spacer(modifier = Modifier.height(24.dp))
 
