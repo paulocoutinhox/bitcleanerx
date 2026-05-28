@@ -1,7 +1,7 @@
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 
 group = "com.bitcleanerx"
-version = "1.2.0"
+version = "1.3.0"
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)

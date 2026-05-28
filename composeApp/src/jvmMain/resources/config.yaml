@@ -9,9 +9,6 @@ macosList:
       - name: Logs
         type: folder
         path: ~/Library/Logs
-      - name: Group Containers
-        type: folder
-        path: ~/Library/Group Containers
 
   - groupName: Xcode Junk
     groupImage: xcode
@@ -243,29 +240,6 @@ macosList:
         type: folder
         path: ~/Library/Application Support/Steam
 
-  - groupName: Virtual Machines
-    groupImage: vm
-    items:
-      - name: Parallels VMs
-        type: folder
-        path: ~/Parallels
-      - name: VMware VMs
-        type: folder
-        path: ~/Documents/Virtual Machines.localized
-
-  - groupName: Cloud SDKs
-    groupImage: cloud
-    items:
-      - name: AWS CLI
-        type: folder
-        path: ~/.aws
-      - name: Azure CLI
-        type: folder
-        path: ~/.azure
-      - name: Google Cloud SDK
-        type: folder
-        path: ~/.config/gcloud
-
   - groupName: Kubernetes
     groupImage: kubernetes
     items:
@@ -305,15 +279,9 @@ macosList:
   - groupName: Apple Devices
     groupImage: apple
     items:
-      - name: iPhone & iPad Backups
-        type: folder
-        path: ~/Library/Application Support/MobileSync/Backup
       - name: Mail Downloads
         type: folder
         path: ~/Library/Containers/com.apple.mail/Data/Library/Mail Downloads
-      - name: Messages Attachments
-        type: folder
-        path: ~/Library/Messages/Attachments
 
   - groupName: Communication
     groupImage: chat
@@ -464,9 +432,6 @@ macosList:
       - name: Safari WebKit Cache
         type: folder
         path: ~/Library/Caches/com.apple.Safari
-      - name: Safari Website Data
-        type: folder
-        path: ~/Library/Safari
       - name: Arc Browser
         type: folder
         path: ~/Library/Application Support/Arc
@@ -648,26 +613,6 @@ windowsList:
         type: folder
         path: ~\AppData\Local\UnrealEngine\Common\DerivedDataCache
 
-  - groupName: Virtual Machines
-    groupImage: vm
-    items:
-      - name: VMware VMs
-        type: folder
-        path: ~\Documents\Virtual Machines
-
-  - groupName: Cloud SDKs
-    groupImage: cloud
-    items:
-      - name: AWS CLI
-        type: folder
-        path: ~\.aws
-      - name: Azure CLI
-        type: folder
-        path: ~\.azure
-      - name: Google Cloud SDK
-        type: folder
-        path: ~\AppData\Roaming\gcloud
-
   - groupName: Kubernetes
     groupImage: kubernetes
     items:
@@ -703,13 +648,6 @@ windowsList:
       - name: Insomnia Cache
         type: folder
         path: ~\AppData\Roaming\Insomnia
-
-  - groupName: Apple Devices
-    groupImage: apple
-    items:
-      - name: iPhone & iPad Backups
-        type: folder
-        path: ~\AppData\Roaming\Apple Computer\MobileSync\Backup
 
   - groupName: Communication
     groupImage: chat
@@ -1021,19 +959,6 @@ linuxList:
       - name: Steam Data
         type: folder
         path: ~/.local/share/Steam
-
-  - groupName: Cloud SDKs
-    groupImage: cloud
-    items:
-      - name: AWS CLI
-        type: folder
-        path: ~/.aws
-      - name: Azure CLI
-        type: folder
-        path: ~/.azure
-      - name: Google Cloud SDK
-        type: folder
-        path: ~/.config/gcloud
 
   - groupName: Kubernetes
     groupImage: kubernetes
