@@ -3,9 +3,6 @@ macosList:
   - groupName: Universal Dev Caches
     groupImage: cache
     items:
-      - name: User Library Caches
-        type: folder
-        path: ~/Library/Caches
       - name: Logs
         type: folder
         path: ~/Library/Logs
@@ -200,13 +197,6 @@ macosList:
         type: folder
         path: ~/.cache/selenium
 
-  - groupName: AI Apps
-    groupImage: ai
-    items:
-      - name: Claude Desktop
-        type: folder
-        path: ~/Library/Application Support/Claude
-
   - groupName: AI Models
     groupImage: ai
     items:
@@ -266,38 +256,9 @@ macosList:
         type: folder
         path: ~/.cache/firebase
 
-  - groupName: API Tools
-    groupImage: api
-    items:
-      - name: Postman Cache
-        type: folder
-        path: ~/Library/Application Support/Postman
-      - name: Insomnia Cache
-        type: folder
-        path: ~/Library/Application Support/Insomnia
-
-  - groupName: Apple Devices
-    groupImage: apple
-    items:
-      - name: Mail Downloads
-        type: folder
-        path: ~/Library/Containers/com.apple.mail/Data/Library/Mail Downloads
-
   - groupName: Communication
     groupImage: chat
     items:
-      - name: WhatsApp Media
-        type: folder
-        path: ~/Library/Group Containers/group.net.whatsapp.WhatsApp.shared
-      - name: Telegram Desktop
-        type: folder
-        path: ~/Library/Application Support/Telegram Desktop
-      - name: Discord Cache
-        type: folder
-        path: ~/Library/Application Support/discord
-      - name: Slack Cache
-        type: folder
-        path: ~/Library/Application Support/Slack
       - name: Zoom Cache
         type: folder
         path: ~/Library/Application Support/zoom.us
@@ -308,12 +269,6 @@ macosList:
       - name: Spotify Cache
         type: folder
         path: ~/Library/Application Support/Spotify/PersistentCache
-      - name: Notion Cache
-        type: folder
-        path: ~/Library/Application Support/Notion
-      - name: Figma Cache
-        type: folder
-        path: ~/Library/Application Support/Figma
       - name: OBS Studio
         type: folder
         path: ~/Library/Application Support/obs-studio
@@ -389,18 +344,12 @@ macosList:
       - name: VSCode Cache
         type: folder
         path: ~/Library/Caches/com.microsoft.VSCode
-      - name: VSCode App Support
-        type: folder
-        path: ~/Library/Application Support/Code
       - name: VSCode OSS
         type: folder
         path: ~/.vscode-oss
       - name: Cursor
         type: folder
         path: ~/.cursor
-      - name: Cursor App Support
-        type: folder
-        path: ~/Library/Application Support/Cursor
       - name: Cursor Server
         type: folder
         path: ~/.cursor-server
@@ -410,12 +359,6 @@ macosList:
       - name: JetBrains Cache
         type: folder
         path: ~/Library/Caches/JetBrains
-      - name: JetBrains App Support
-        type: folder
-        path: ~/Library/Application Support/JetBrains
-      - name: GitHub Desktop
-        type: folder
-        path: ~/Library/Application Support/GitHub Desktop
 
   - groupName: Browsers
     groupImage: browser
@@ -423,24 +366,12 @@ macosList:
       - name: Chrome Cache
         type: folder
         path: ~/Library/Caches/Google/Chrome
-      - name: Chrome GPU Cache
-        type: folder
-        path: ~/Library/Application Support/Google/Chrome/Default/GPUCache
       - name: Firefox Cache
         type: folder
         path: ~/Library/Caches/Firefox
       - name: Safari WebKit Cache
         type: folder
         path: ~/Library/Caches/com.apple.Safari
-      - name: Arc Browser
-        type: folder
-        path: ~/Library/Application Support/Arc
-      - name: Brave Browser
-        type: folder
-        path: ~/Library/Application Support/BraveSoftware
-      - name: Microsoft Edge
-        type: folder
-        path: ~/Library/Application Support/Microsoft Edge
 
 windowsList:
 
@@ -580,13 +511,6 @@ windowsList:
         type: folder
         path: ~\.cache\selenium
 
-  - groupName: AI Apps
-    groupImage: ai
-    items:
-      - name: Claude Desktop
-        type: folder
-        path: ~\AppData\Roaming\Claude
-
   - groupName: AI Models
     groupImage: ai
     items:
@@ -639,31 +563,9 @@ windowsList:
         type: folder
         path: ~\.cache\firebase
 
-  - groupName: API Tools
-    groupImage: api
-    items:
-      - name: Postman Cache
-        type: folder
-        path: ~\AppData\Roaming\Postman
-      - name: Insomnia Cache
-        type: folder
-        path: ~\AppData\Roaming\Insomnia
-
   - groupName: Communication
     groupImage: chat
     items:
-      - name: WhatsApp
-        type: folder
-        path: ~\AppData\Roaming\WhatsApp
-      - name: Telegram Desktop
-        type: folder
-        path: ~\AppData\Roaming\Telegram Desktop
-      - name: Discord Cache
-        type: folder
-        path: ~\AppData\Roaming\discord
-      - name: Slack Cache
-        type: folder
-        path: ~\AppData\Roaming\Slack
       - name: Zoom Cache
         type: folder
         path: ~\AppData\Roaming\Zoom
@@ -674,12 +576,6 @@ windowsList:
       - name: Spotify Cache
         type: folder
         path: ~\AppData\Local\Spotify\Storage
-      - name: Notion Cache
-        type: folder
-        path: ~\AppData\Roaming\Notion
-      - name: Figma Cache
-        type: folder
-        path: ~\AppData\Roaming\Figma
       - name: OBS Studio
         type: folder
         path: ~\AppData\Roaming\obs-studio
@@ -718,27 +614,18 @@ windowsList:
       - name: VSCode Cache
         type: folder
         path: ~\AppData\Local\Code\Cache
-      - name: VSCode AppData
-        type: folder
-        path: ~\AppData\Roaming\Code
       - name: VSCode OSS
         type: folder
         path: ~\.vscode-oss
       - name: Cursor
         type: folder
         path: ~\.cursor
-      - name: Cursor App Support
-        type: folder
-        path: ~\AppData\Roaming\Cursor
       - name: Cursor Server
         type: folder
         path: ~\.cursor-server
       - name: Codeium / Windsurf
         type: folder
         path: ~\.codeium
-      - name: GitHub Desktop
-        type: folder
-        path: ~\AppData\Roaming\GitHub Desktop
 
   - groupName: Browsers
     groupImage: browser
@@ -746,12 +633,6 @@ windowsList:
       - name: Chrome GPU Cache
         type: folder
         path: ~\AppData\Local\Google\Chrome\User Data\Default\GPUCache
-      - name: Brave Browser
-        type: folder
-        path: ~\AppData\Local\BraveSoftware
-      - name: Microsoft Edge
-        type: folder
-        path: ~\AppData\Local\Microsoft\Edge
 
 linuxList:
 
@@ -761,9 +642,6 @@ linuxList:
       - name: User Cache
         type: folder
         path: ~/.cache
-      - name: Logs
-        type: folder
-        path: ~/.local/share
 
   - groupName: Package Manager
     groupImage: system
@@ -876,9 +754,6 @@ linuxList:
       - name: Cursor
         type: folder
         path: ~/.cursor
-      - name: Cursor App Support
-        type: folder
-        path: ~/.config/Cursor
       - name: Cursor Server
         type: folder
         path: ~/.cursor-server
@@ -919,13 +794,6 @@ linuxList:
       - name: Selenium Drivers
         type: folder
         path: ~/.cache/selenium
-
-  - groupName: AI Apps
-    groupImage: ai
-    items:
-      - name: Claude Desktop
-        type: folder
-        path: ~/.config/Claude
 
   - groupName: AI Models
     groupImage: ai
@@ -986,31 +854,9 @@ linuxList:
         type: folder
         path: ~/.cache/firebase
 
-  - groupName: API Tools
-    groupImage: api
-    items:
-      - name: Postman Cache
-        type: folder
-        path: ~/.config/Postman
-      - name: Insomnia Cache
-        type: folder
-        path: ~/.config/Insomnia
-
   - groupName: Communication
     groupImage: chat
     items:
-      - name: WhatsApp
-        type: folder
-        path: ~/.config/WhatsApp
-      - name: Telegram Desktop
-        type: folder
-        path: ~/.local/share/TelegramDesktop
-      - name: Discord Cache
-        type: folder
-        path: ~/.config/discord
-      - name: Slack Cache
-        type: folder
-        path: ~/.config/Slack
       - name: Zoom Cache
         type: folder
         path: ~/.zoom
@@ -1021,9 +867,6 @@ linuxList:
       - name: Spotify Cache
         type: folder
         path: ~/.cache/spotify
-      - name: Notion Cache
-        type: folder
-        path: ~/.config/Notion
       - name: OBS Studio
         type: folder
         path: ~/.config/obs-studio
@@ -1031,12 +874,6 @@ linuxList:
   - groupName: Browsers
     groupImage: browser
     items:
-      - name: Brave Browser
-        type: folder
-        path: ~/.config/BraveSoftware
-      - name: Microsoft Edge
-        type: folder
-        path: ~/.config/microsoft-edge
       - name: Chrome GPU Cache
         type: folder
         path: ~/.config/google-chrome/Default/GPUCache
